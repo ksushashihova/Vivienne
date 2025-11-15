@@ -1,12 +1,18 @@
-/*
-  Специально для тёмной темы при наличии класса,
-  здесь окажутся стили, которые нужно переопределить принудительно,
-  переключая тему
-*/
 
 :root.theme-dark {
-  /* сохраните этот селектор в приведённом виде.
-    Так стили написанные ниже будут иметь больший вес,
-    чем стили в медиазапросе предпочтений пользователя
-  */
+    --accent-color: #ff0070;
+  --accent-color-bottom: #ff0070;
+  --section-title-color:#ff0070;
+  --accent-color-decor: #ff0070;
+  --text-color: #F1B2CE;
+  --bg-color: #000028;
+  --bg-image: url('../images/cover-image-dark.png');
+  --content-section__subtitle-color: #000028;
+  --header-title-color: #DB00FF;
+  --page-font: 'IBM Plex Mono', sans-serif;
+  }
+
+
+.theme-dark .header__rec {
+  display: block;
 }
