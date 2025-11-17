@@ -12,7 +12,7 @@
   --accent-color-decor: #353430; 
   --bg-color-all: #FFF1F7;
   --header-title-color-shadow: #FF0070;
-  --accent-color-bottom-decor: rgba(50, 49, 45, 0.4)
+  --accent-color-bottom-decor: rgba(50, 49, 45, 0.4);
 }
 
 .theme-light .header__rec {

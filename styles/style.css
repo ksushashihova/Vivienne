@@ -33,7 +33,6 @@
   border: none;
   padding: 1.5px 13px;
   color: var(--accent-color-bottom);
-  font-family: var(--page-font);
   font-weight: 400;
   font-size: 18px;
   line-height: 1;
@@ -62,7 +61,6 @@
   justify-self: start;
   align-self: center;
   color: var(--header-title-color);
-  font-family: var(--page-font);
   font-weight: 700;
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   line-height: 0.8;
@@ -126,7 +124,6 @@
 
 .title-decor {
   color: var(--bg-color);
-  font-family: var(--page-font);
   font-weight: 700;
   line-height: 23px;
   background-color: var(--accent-color);
@@ -160,7 +157,6 @@
 
 .section__title {
   color: var(--section-title-color);
-  font-family: var(--page-font);
   font-weight: 700;
   font-size: 18px;
   line-height: 23px;
@@ -201,7 +197,6 @@
 
 a {
   color: var(--text-color);
-  font-family: var(--page-font);
   font-size: 18px;
   line-height: 23px;
   text-decoration: none;
@@ -329,6 +324,7 @@ a:focus-visible {
     top: 20px;
     right: 50px;
   }
+
   .header__subtitle { 
     max-inline-size: 50%;
   }
@@ -351,7 +347,6 @@ a:focus-visible {
   .content-section {
     grid-template-columns: minmax(0, 315px) 1fr 1fr;
   }
-
 
   .content-section__wrapper {
     grid-column: span 2;
