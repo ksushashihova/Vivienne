@@ -23,3 +23,10 @@ function setTheme(theme) {
   document.documentElement.classList.add(`theme-${theme}`);
   localStorage.setItem('theme', theme); // можно оставить для запоминания клика
 }
+
+window.addEventListener('load', () => {
+  const preloader = document.getElementById('preloader');
+  preloader.style.opacity = '0';
+  preloader.style.transition = 'opacity 0.3s ease';
+  setTimeout(() => preloader.style.display = 'none', 300);
+});

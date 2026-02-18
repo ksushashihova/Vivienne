@@ -237,3 +237,55 @@ p {
   fill: #A7D6FF; /* например, светлее, чем активный */
 }
 
+
+/* Перекрытие всего экрана */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000; /* черный фон */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Центрируем логотип и спиннер */
+.spinner-wrapper {
+  position: relative;
+  width: 120px;  /* размер зоны логотипа + спиннер */
+  height: 120px;
+}
+
+/* Логотип по центру */
+.preloader-logo {
+  width: 60px; /* размер логотипа */
+  
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+/* Крутящийся спиннер */
+.spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  border: 6px solid rgba(203, 14, 149, 0.2); /* светлый фон спиннера */
+  border-top-color: #ff0099; /* активная часть спиннера */
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: spin 1s linear infinite;
+  z-index: 1;
+}
+
+@keyframes spin {
+  0%   { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
