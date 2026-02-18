@@ -1,21 +1,5 @@
 
 :root.theme-dark {
-    --accent-color: #ff0070;
-  --accent-color-bottom: #ff0070;
-  --section-title-color:#ff0070;
-  --accent-color-decor: #ff0070;
-  --text-color: #F1B2CE;
-  --bg-color: #000028;
-  --bg-image: url('../images/cover-image-dark.png');
-  --content-section-subtitle-color: #000028;
-  --header-title-color: #DB00FF;
-  --page-font: 'IBM Plex Mono', monospace;
-  --header-title-color-shadow: #FF0070;
-  --accent-color-bottom-decor: rgba(255, 0, 100, 0.4);
-  --bg-color-all: #000028;
-  }
-
-
-.theme-dark .header__rec {
-  display: block;
+  --text-color: #ffffff;
+  --bg-image: url('../images/cover-image-dark.png');    
 }

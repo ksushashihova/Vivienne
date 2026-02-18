@@ -1,52 +1,40 @@
+// Инициализация темы при загрузке страницы
 (function initTheme() {
   const theme = localStorage.getItem('theme');
   if (theme) {
     setTheme(theme);
+    const switcher = document.querySelector('.theme-switcher');
+    if (switcher) {
+      if (theme === 'light') {
+        switcher.classList.add('active');
+      } else {
+        switcher.classList.remove('active');
+      }
+    }
   }
 })();
 
+// После загрузки DOM
 document.addEventListener('DOMContentLoaded', () => {
-  const currentTheme = [...document.documentElement.classList]
-    .find((cn) => cn.startsWith('theme-'))
-    ?.replace('theme-', '');
-  const themeButtons = [
-    ...document.querySelectorAll('.header__theme-menu-button'),
-  ];
-  setActiveButton(themeButtons, currentTheme);
+  const switcher = document.querySelector('.theme-switcher');
 
-  themeButtons.forEach((button) => {
-    button.addEventListener('click', () => {
-      const chosenTheme = [...button.classList]
-        .find((cn) => cn.includes('_type_'))
-        .split('_type_')[1];
-      setTheme(chosenTheme);
-      setActiveButton(themeButtons, chosenTheme);
-    });
+  if (!switcher) return;
+
+  // Навешиваем клик на тумблер
+  switcher.addEventListener('click', () => {
+    // Переключаем класс active
+    switcher.classList.toggle('active');
+
+    // Выбираем тему в зависимости от состояния
+    const chosenTheme = switcher.classList.contains('active') ? 'light' : 'dark';
+    setTheme(chosenTheme);
   });
 });
 
+// Функция установки темы
 function setTheme(theme) {
+  // Сбрасываем старые классы и ставим новый
   document.documentElement.className = '';
   document.documentElement.classList.add(`theme-${theme}`);
   localStorage.setItem('theme', theme);
-}
-
-function setActiveButton(buttonsArray, theme) {
-  buttonsArray.forEach((button) => {
-    button.classList.remove('header__theme-menu-button_active');
-    button.removeAttribute('disabled');
-  });
-  const target = buttonsArray.find((button) =>
-    button.classList.contains(`header__theme-menu-button_type_${theme}`)
-  );
-  if (target) {
-    target.classList.add('header__theme-menu-button_active');
-    target.setAttribute('disabled', true);
-  } else {
-    const autoButton = document.querySelector(
-      '.header__theme-menu-button_type_auto'
-    );
-    autoButton.classList.add('header__theme-menu-button_active');
-    autoButton.setAttribute('disabled', true);
-  }
 }

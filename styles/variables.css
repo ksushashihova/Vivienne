@@ -1,15 +1,5 @@
 :root {
-  --accent-color: #ff0070;
-  --accent-color-bottom: #ff0070;
-  --section-title-color:#ff0070;
-  --accent-color-decor: #ff0070;
-  --text-color: #F1B2CE;
-  --bg-color: #000028;
+  --text-color: #000000;
   --bg-image: url('../images/cover-image-dark.png');
-  --content-section-subtitle-color: #000028;
-  --header-title-color: #DB00FF;
-  --page-font: 'IBM Plex Mono', monospace;
-  --bg-color-all: #000028;
-  --header-title-color-shadow: #ff0070;
-  --accent-color-bottom-decor: rgba(255, 0, 100, 0.4);
+
 }
