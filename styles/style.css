@@ -170,9 +170,9 @@ p {
 .filos {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  
   gap: 83px;
-  margin-bottom: 83px
+  margin-bottom: 16px
 }
 
 .filos__img {
@@ -215,10 +215,7 @@ p {
 }
 
 /* при наведении — сдвигаем вправо на ширину контейнера минус ширина круга */
-.theme-switcher:hover .theme-toggle-circle {
-  transform: translateY(-50%) translateX(30px); 
 
-}
 
 
 .theme-switcher:hover .bg-oval {
@@ -234,7 +231,7 @@ p {
 }
 
 .theme-switcher.active:hover .bg-oval {
-  fill: #A7D6FF; /* например, светлее, чем активный */
+  fill: #FFF8C9; /* например, светлее, чем активный */
 }
 
 
@@ -283,6 +280,91 @@ p {
   transform: translate(-50%, -50%);
   animation: spin 1s linear infinite;
   z-index: 1;
+}
+
+.stars{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  cursor: pointer;
+}
+
+h4 {
+  font-family: 'Gotham';
+  font-size: 35px;
+}
+
+h3 {
+  font-family: 'Gotham';
+  font-size: 48px;
+}
+
+.star {
+  color: transparent;
+}
+
+.comment-form {
+    position: relative;
+  width: 1000px;
+  height: 422px;
+}
+.comment-input {
+  width: 100%;
+  height: 100%;
+
+  outline: none;  
+  border: #EC5228 solid 2px;
+  border-radius: 29px;
+  font-family: 'Gotham';
+  font-size: 30px;
+  padding: 10px;
+  resize: none;
+  padding: 66px;
+  background-color: transparent;
+  color: var(--text-color);
+}
+
+.comment-input::placeholder {
+  color: var(--text-color); /* сюда ставишь нужный цвет */
+  opacity: 1;  /* чтобы цвет точно был, а не прозрачный */
+}
+
+.star path {
+  stroke: #000; /* черная обводка по умолчанию */
+  transition: stroke 0.2s ease, fill 0.2s ease;
+  stroke-width: 0.7px;
+}
+
+.hight path {
+  stroke: #FFF8C9;/* убираем обводку при наведении/активной звезде */
+  color: #FFF8C9;
+  stroke-width: 0.7px;   /* цвет заливки при наведении/активной */
+}
+
+.active path {
+  stroke-width: 0.7px;
+  stroke: #F6D250;
+  color: #F6D250;   /* цвет заливки при наведении/активной */
+}
+.comment-button {
+  position: absolute;           /* Абсолютно относительно контейнера */
+  bottom: 22px;                     /* По вертикали центрируем */
+  right: 33px;                  /* Отступ справа */
+  font-family: 'Gotham';
+  font-size: 47px;
+  padding: 17px 33px;
+  border: none;
+  border-radius: 55px;
+  background-color: #EC5228;
+  color: #fff;
+  cursor: pointer;
+}
+
+.comment-button:hover {
+  background-color: #FF9375;
+}
+.comment-button:active {
+  background-color: #9C3316;
 }
 
 @keyframes spin {
