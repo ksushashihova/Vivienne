@@ -1,40 +1,25 @@
-// Инициализация темы при загрузке страницы
 (function initTheme() {
-  const theme = localStorage.getItem('theme');
-  if (theme) {
-    setTheme(theme);
-    const switcher = document.querySelector('.theme-switcher');
-    if (switcher) {
-      if (theme === 'light') {
-        switcher.classList.add('active');
-      } else {
-        switcher.classList.remove('active');
-      }
-    }
-  }
+  // Всегда стартуем со светлой темы
+  setTheme('light');
 })();
 
-// После загрузки DOM
 document.addEventListener('DOMContentLoaded', () => {
-  const switcher = document.querySelector('.theme-switcher');
+  const toggle = document.querySelector('.theme-switcher');
 
-  if (!switcher) return;
+  // Ставим тумблер в начальное положение для светлой темы
+  toggle.classList.remove('active');
 
-  // Навешиваем клик на тумблер
-  switcher.addEventListener('click', () => {
-    // Переключаем класс active
-    switcher.classList.toggle('active');
-
-    // Выбираем тему в зависимости от состояния
-    const chosenTheme = switcher.classList.contains('active') ? 'light' : 'dark';
-    setTheme(chosenTheme);
+  toggle.addEventListener('click', () => {
+    // Переключаем тему и фиксируем тумблер
+    toggle.classList.toggle('active');
+    const newTheme = toggle.classList.contains('active') ? 'dark' : 'light';
+    setTheme(newTheme);
   });
 });
 
-// Функция установки темы
+// Функция смены темы
 function setTheme(theme) {
-  // Сбрасываем старые классы и ставим новый
-  document.documentElement.className = '';
+  document.documentElement.className = ''; // сбрасываем все классы
   document.documentElement.classList.add(`theme-${theme}`);
-  localStorage.setItem('theme', theme);
+  localStorage.setItem('theme', theme); // можно оставить для запоминания клика
 }

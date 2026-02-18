@@ -1,16 +1,10 @@
 
 :root.theme-light {
-  --text-color: #ffffff;
-  --bg-image: url('../images/cover-image-dark.png'); 
-}
-
-
   
-@media (prefers-color-scheme: light) {
-  :root {
-  --text-color: #ffffff;
-  --bg-image: url('../images/cover-image-dark.png'); 
-  }
+  --text-color: #000000;
+  --bg-image: url('../images/cover-image-light.png');   
 }
+
+
 
 
